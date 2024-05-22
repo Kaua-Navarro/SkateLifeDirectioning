@@ -22,8 +22,7 @@ body {
 }
 
 .header {
-  height: var(--tamanho-header);
-  border-bottom: 2px solid #32b9cd;
+  height: 15vh;
 }
 
 .header .container {
@@ -42,18 +41,12 @@ body {
 }
 
 .navbar {
-  width: 300px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   list-style: none;
   color: #e3b062;
-}
-
-.titulo {
-  color: white;
-  width: fit-content;
-  font-weight: 500;
 }
 
 .header h1 {
@@ -61,15 +54,18 @@ body {
 }
 
 .imgNav {
-  height: 80px;
   width: 80px;
+  position: absolute;
+  top: 5px;
+  left: 50px;
 }
 
-.logoSLD {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+.navbar h1 {
+  position: absolute;
+  top: 12px;
+  left: 120px;
+  font-size: 50px;
+  color: black;
 }
 
 /* BANNER */
