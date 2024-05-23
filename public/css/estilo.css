@@ -20,7 +20,7 @@ li {
 .navBar {
   height: 15vh;
   background: rgb(96, 40, 156);
-  background: linear-gradient(90deg, rgb(5, 175, 62) 0%, rgb(119, 11, 158) 44%, rgb(64, 0, 112) 65%);
+  background: linear-gradient(-90deg, rgb(5, 175, 62) 0%, rgb(119, 11, 158) 44%, rgb(128, 0, 128) 65%);
   display: flex;
   justify-content: end;
   align-items: center;
