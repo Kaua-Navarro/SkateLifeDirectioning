@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: purple;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+    color: lightgreen;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+  
+  li {
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .navBar {
+    position: fixed; /* Fixa a barra de navegação */
+    top: 0; /* Alinha a barra de navegação no topo da tela */
+    width: 100%; /* Garante que a barra de navegação ocupe toda a largura da tela */
+    height: 15vh;
+    background: rgb(96, 40, 156);
+    background: linear-gradient(-90deg, rgb(5, 175, 62) 0%, rgb(119, 11, 158) 44%, rgb(128, 0, 128) 65%);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  
+  .logoNav {
+    position: absolute;
+    width: 110px;
+    left: 75px;
+  }
+  
+  .navList {
+    display: flex;
+    margin-right: 180px;
+  }
+
+  .cardCadastro {
+    border-radius: 20px;
+    margin: 10vh auto; /* Centraliza verticalmente e adiciona um espaçamento no topo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px; /* Define a largura máxima */
+    width: 80%; /* Define a largura relativa */
+    height: auto; /* Ajusta a altura conforme o conteúdo */
+    background: linear-gradient(to right, rgb(172, 1, 172), lightgreen);
+    padding: 10px; /* Adiciona um espaçamento interno */
+}
+
+
+ .inputs {
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: wavy;
+    color: rgb(165, 10, 165);
+    background-color: lightgreen;
+    height: 25px;
+    width: 240px;
+}
+
+ .cardCadastro p {
+    color: rgb(41, 1, 41);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cardCadastro h1 {
+    color: rgb(65, 10, 65);
+}
+
+.botao {
+    border-radius: 20px;
+    height: 30px;
+    width: 120px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgb(172, 1, 172), lightgreen);
+    color: rgb(41, 1, 41);
+}
+
