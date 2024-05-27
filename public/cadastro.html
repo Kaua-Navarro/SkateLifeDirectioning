@@ -14,8 +14,9 @@
   <link rel="icon" href="./assets/icon/LogoSLD.ico" />
 </head>
 
-<body onload="listar()">
+<body>
   <header class="header">
+    <div class="container">
     <nav class="navBar">
       <img src="./assets/imgs/LogoSLD.png" class="logoNav">
       <ul class="navList">
@@ -32,33 +33,31 @@
           <a href="cadastro.html"><b>Cadastro</b></a>
         </li>
         <li>
-          <a href="#"><b>Login</b></a>
+          <a href="login.html"><b>Login</b></a>
         </li>
       </ul>
     </nav>
   </header>
-  <div id="cardErro" class="cardErro">
-    <p class="mensagemErro" id="mensagem_erro"></p>
-  </div>
-  <br><br>
-  <div class="cardCadastro">
-    <h1>Cadastro</h1>
-    <p>Nome</p>
-    <input type="text" id="input_nome" class="inputs">
-    <p>Email</p>
-    <input type="text" id="input_email" class="inputs">
-    <p>Senha</p>
-    <input type="password" id="input_senha" class="inputs">
-    <p>Confirme a sua senha</p>
-    <input type="password" id="input_confirmarSenha" class="inputs"> <br>
-    <button onclick="cadastrar()" class="botao">Cadastrar</button>
-  </div>
+
+      <div class="cardCadastro">
+        <h1>Cadastro</h1>
+        <p>Nome</p>
+        <input type="text" id="input_nome" class="inputs">
+        <p>Email</p>
+        <input type="text" id="input_email" class="inputs">
+        <p>Senha</p>
+        <input type="password" id="input_senha" class="inputs">
+        <p>Confirme a sua senha</p>
+        <input type="password" id="input_confirmarSenha" class="inputs"> <br>
+        <button onclick="cadastrar()" class="botao">Cadastrar</button>
+      </div>
 </body>
 
 </html>
 
 <script>
   function cadastrar() {
+
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = input_nome.value;
@@ -71,7 +70,9 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      alert(`Preencha todos os campos para continuar com o seu cadastro!`);
+        alert(`Insira todos os campos para prosseguir com o cadastro!`);
+    } else {
+      
     }
 
     // Enviando o valor da nova input
@@ -92,19 +93,17 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert(`Cadastro executado com sucesso, redirecionando para a página de login`);
+          alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`);
+
           setTimeout(() => {
             window.location = "login.html";
           }, "2000");
-
-          limparFormulario();
         } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
+          alert(`Houve um erro ao tentar realizar o cadastro!`);
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
       });
 
     return false;

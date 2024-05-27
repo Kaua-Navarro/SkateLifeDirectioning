@@ -1,4 +1,4 @@
-  body {
+body {
     margin: 0;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: purple;
@@ -44,16 +44,16 @@
   .cardCadastro {
     border-radius: 20px;
     margin: 10vh auto; /* Centraliza verticalmente e adiciona um espaçamento no topo */
-    margin-top: 8%;
+    margin-top: 13%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 400px; /* Define a largura máxima */
     width: 80%; /* Define a largura relativa */
-    height: auto; /* Ajusta a altura conforme o conteúdo */
+    height: 300px; /* Ajusta a altura conforme o conteúdo */
     background: linear-gradient(to right, rgb(172, 1, 172), lightgreen);
-    padding: 10px; /* Adiciona um espaçamento interno */
+    padding: 15px; /* Adiciona um espaçamento interno */
 }
 
 
