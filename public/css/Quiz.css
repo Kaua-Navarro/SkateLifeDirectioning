@@ -80,6 +80,10 @@ li {
     padding: 5px;
 }
 
+#resultadoTexto {
+    color: lightgreen;
+}
+
 .pergunta {
     display: none;
 }

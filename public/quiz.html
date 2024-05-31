@@ -164,7 +164,8 @@
 <script>
     var pontosPorPergunta = 10;
         var respostasCorretas = ['a', 'b', 'a', 'a', 'b', 'b', 'c', 'b', 'b', 'a'];
-        var respostasUsuario = [];
+        var listaResposta = [];
+        var listaPontuacao = [];
         var perguntaAtual = 1;
 
         function iniciar() {
@@ -173,74 +174,76 @@
         }
 
         function proximaPergunta1() {
-            respostasUsuario[0] = resposta1.value;
+            listaResposta[0] = resposta1.value;
             pergunta1.style.display = 'none';
             pergunta2.style.display = 'block';
         }
 
         function proximaPergunta2() {
-            respostasUsuario[1] = resposta2.value;
+            listaResposta[1] = resposta2.value;
             pergunta2.style.display = 'none';
             pergunta3.style.display = 'block';
         }
 
         function proximaPergunta3() {
-            respostasUsuario[2] = resposta3.value;
+            listaResposta[2] = resposta3.value;
             pergunta3.style.display = 'none';
             pergunta4.style.display = 'block';
         }
 
         function proximaPergunta4() {
-            respostasUsuario[3] = resposta4.value;
+            listaResposta[3] = resposta4.value;
             pergunta4.style.display = 'none';
             pergunta5.style.display = 'block';
         }
 
         function proximaPergunta5() {
-            respostasUsuario[4] = resposta5.value;
+            listaResposta[4] = resposta5.value;
             pergunta5.style.display = 'none';
             pergunta6.style.display = 'block';
         }
 
         function proximaPergunta6() {
-            respostasUsuario[5] = resposta6.value;
+            listaResposta[5] = resposta6.value;
             pergunta6.style.display = 'none';
             pergunta7.style.display = 'block';
         }
 
         function proximaPergunta7() {
-            respostasUsuario[6] = resposta7.value;
+            listaResposta[6] = resposta7.value;
             pergunta7.style.display = 'none';
             pergunta8.style.display = 'block';
         }
 
         function proximaPergunta8() {
-            respostasUsuario[7] = resposta8.value;
+            listaResposta[7] = resposta8.value;
             pergunta8.style.display = 'none';
             pergunta9.style.display = 'block';
         }
 
         function proximaPergunta9() {
-            respostasUsuario[8] = resposta9.value;
+            listaResposta[8] = resposta9.value;
             pergunta9.style.display = 'none';
             pergunta10.style.display = 'block';
         }
 
         function verificarRespostas() {
-            respostasUsuario[9] = resposta10.value;
+            listaResposta[9] = resposta10.value;
             var pontuacaoFinal = 0;
-            for (var i = 0; i < respostasUsuario.length; i++) {
-                if (respostasUsuario[i] == respostasCorretas[i]) {
+            for (var i = 0; i < listaResposta.length; i++) {
+                if (listaResposta[i] == respostasCorretas[i]) {
                     pontuacaoFinal += pontosPorPergunta;
+                    listaPontuacao.push(pontuacaoFinal);
+                    console.log(listaPontuacao);
                 }
             }
             pergunta10.style.display = 'none';
             resultado.style.display = 'block';
-            resultadoTexto.innerText = "Sua pontuação final é: " + pontuacaoFinal;
+            resultadoTexto.innerText = `Sua pontuação final é: ${pontuacaoFinal}`;
         }
 
         function reiniciarQuiz() {
-            respostasUsuario = [];
+            listaResposta = [];
             resultado.style.display = 'none';
             cardInicio.style.display = 'block';
             for (var i = 1; i <= 10; i++) {
