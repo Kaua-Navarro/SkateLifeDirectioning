@@ -1,15 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: purple;
+  font-family: 'Barlow', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
   text-decoration: none;
-  margin: 0 20px 0 20px;
+  margin: 0 20px;
   color: lightgreen;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 li {
@@ -17,22 +16,188 @@ li {
   list-style: none;
 }
 
-.navBar {
-  height: 15vh;
-  background: rgb(96, 40, 156);
-  background: linear-gradient(-90deg, rgb(5, 175, 62) 0%, rgb(119, 11, 158) 44%, rgb(128, 0, 128) 65%);
+header {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(-90deg, rgb(5, 175, 62) 0%, rgb(119, 11, 158) 44%, rgb(107, 15, 107) 65%);
+  position: fixed;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  position: fixed;
 }
 
 .logoNav {
-  position: absolute;
-  width: 110px;
-  left: 75px;
+  width: 120px;
+  height: 90px;
 }
 
 .navList {
   display: flex;
+  gap: 20px;
+}
+
+.section1 {
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.fotoBv {
+  height: 600px;
+  width: 600px;
+  margin-top: 90px;
+}
+
+.pBv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 25px;
+  background: linear-gradient(to right, rgb(172, 1, 172), lightgreen);
+  flex: 1;
+  height: 200px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.pBv h1 {
+  color: white;
+}
+
+.pBv p {
+  color: white;
+  font-size: 25px;
+}
+
+.section2 {
+  background-color: lightgreen;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+}
+
+.oQSLD {
+  background: linear-gradient(to right, rgb(172, 1, 172), rgb(103, 196, 103));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.oQSLD h1 {
+  color: rgb(255, 255, 255);
+}
+
+.oQSLD p {
+  color: white;
+  font-size: 22px;
+}
+
+.pQSLD {
+  background: linear-gradient(to right, rgb(172, 1, 172), rgb(103, 196, 103));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.pQSLD h1 {
+  color: white;
+}
+
+.pQSLD p {
+  color: white;
+  font-size: 22px;
+}
+
+.cMSLD {
+  background: linear-gradient(to right, rgb(172, 1, 172), rgb(103, 196, 103));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.cMSLD h1 {
+  color: white;
+}
+
+.cMSLD p {
+  color: white;
+  font-size: 22px;
+}
+
+.section3 {
+  background-color: purple;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+}
+
+.imgPai {
+  height: 600px;
+  border-radius: 100px;
+  margin-right: 300px;
+}
+
+.sobreM {
+  background: linear-gradient(to right, rgb(172, 1, 172), rgb(103, 196, 103));
+  border-radius: 20px;
+  padding: 20px;
   margin-right: 180px;
+}
+
+.sobreM h1 {
+  color: white;
+}
+
+.sobreM p {
+  font-size: 20px;
+  color: white;
+}
+
+.sobreM b {
+  color: lightgreen;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.footer {
+  height: 100px;
+  background-color: rgb(83, 9, 83);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  color: lightgreen;
 }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Skate</title>
+</head>
+<body>
+    <h1>Quiz de Skate</h1>
+    <div id="quiz-container">
+        <!-- O quiz será gerado aqui -->
+    </div>
+    <button onclick="fazerQuiz()">Iniciar Quiz</button>
+    <div id="resultado"></div>
+
+    <script>
+        // Array de perguntas
+        const perguntas = [
+            "Qual é a manobra mais básica no skate? (a) Ollie (b) Kickflip (c) Heelflip",
+            "Quem é conhecido como o 'pai do skate'? (a) Tony Hawk (b) Rodney Mullen (c) Mark Gonzales",
+            "Em que ano o skate moderno foi inventado? (a) 1963 (b) 1975 (c) 1980",
+            "Qual é a marca de skate mais famosa? (a) Vans (b) Element (c) Santa Cruz",
+            "Qual é o nome da manobra onde o skatista desliza pelo corrimão? (a) Grind (b) Slide (c) Flip"
+        ];
+
+        // Array de respostas corretas
+        const respostasCorretas = ['a', 'b', 'a', 'c', 'a'];
+
+        // Array para armazenar respostas do usuário
+        let respostasUsuario = [];
+
+        // Função para fazer perguntas e armazenar respostas
+        function fazerQuiz() {
+            respostasUsuario = [];
+            const quizContainer = document.getElementById('quiz-container');
+            quizContainer.innerHTML = ''; // Limpa o container antes de adicionar novas perguntas
+
+            for (let i = 0; i < perguntas.length; i++) {
+                let perguntaDiv = document.createElement('div');
+                perguntaDiv.className = 'pergunta';
+                
+                let perguntaTexto = document.createElement('p');
+                perguntaTexto.innerText = perguntas[i];
+                perguntaDiv.appendChild(perguntaTexto);
+
+                let inputResposta = document.createElement('input');
+                inputResposta.type = 'text';
+                inputResposta.id = 'resposta' + i;
+                perguntaDiv.appendChild(inputResposta);
+
+                quizContainer.appendChild(perguntaDiv);
+            }
+
+            let botaoEnviar = document.createElement('button');
+            botaoEnviar.innerText = 'Enviar Respostas';
+            botaoEnviar.onclick = verificarRespostas;
+            quizContainer.appendChild(botaoEnviar);
+        }
+
+        // Função para verificar respostas
+        function verificarRespostas() {
+            for (let i = 0; i < perguntas.length; i++) {
+                let resposta = document.getElementById('resposta' + i).value;
+                respostasUsuario.push(resposta);
+            }
+
+            let pontuacao = 0;
+            for (let i = 0; i < respostasUsuario.length; i++) {
+                if (respostasUsuario[i].toLowerCase() === respostasCorretas[i]) {
+                    pontuacao++;
+                }
+            }
+            document.getElementById('resultado').innerText = "Você acertou " + pontuacao + " de " + perguntas.length + " perguntas.";
+        }
+    </script>
+</body>
+</html>
+ 

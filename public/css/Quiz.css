@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: lightgreen;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    margin: 0 20px 0 20px;
+    color: lightgreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.navBar {
+    position: fixed; /* Fixa a barra de navegação */
+    top: 0; /* Alinha a barra de navegação no topo da tela */
+    width: 100%; /* Garante que a barra de navegação ocupe toda a largura da tela */
+    height: 15vh;
+    background: rgb(96, 40, 156);
+    background: linear-gradient(-90deg, rgb(5, 175, 62) 0%, rgb(119, 11, 158) 44%, rgb(128, 0, 128) 65%);
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.logoNav {
+    position: absolute;
+    width: 110px;
+    left: 75px;
+}
+
+.navList {
+    display: flex;
+    margin-right: 180px;
+}
+
+.cardInicio, .pergunta, #resultado {
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-top: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    height: auto;
+    padding: 20px;
+}
+
+.cardInicio h1, .pergunta h2, #resultado h2 {
+    color: lightgreen;
+}
+
+.cardInicio p {
+    color: lightgreen;
+    font-size: 20px;
+    text-align: center;
+}
+
+.botao {
+    border-radius: 20px;
+    height: 30px;
+    width: 120px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(to right, rgb(172, 1, 172), lightgreen);
+    color: rgb(41, 1, 41);
+    cursor: pointer;
+}
+
+.pergunta select, #resultado p {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.pergunta {
+    display: none;
+}
