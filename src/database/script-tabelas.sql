@@ -10,17 +10,17 @@ CREATE DATABASE SLD;
 
 USE SLD;
 
-CREATE TABLE Quiz (
-	idQuizTentativa INT PRIMARY KEY AUTO_INCREMENT,
-	pontuacao INT
-);
-
 CREATE TABLE Usuario (
 	idUsuario INT AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(256),
 	senha VARCHAR(50),
-	fkTentativa INT,
-	FOREIGN KEY (fkTentativa) REFERENCES Quiz (idQuizTentativa),
-	PRIMARY KEY (idUsuario,fkTentativa)
+);
+
+CREATE TABLE Quiz (
+    idQuiz INT PRIMARY KEY AUTO_INCREMENT,
+    fkUsuario INT,
+    Pontuação INT,
+    dtQuiz DATE,
+    FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario)
 );
