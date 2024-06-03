@@ -53,14 +53,14 @@
 
 <script>
 
-
     function entrar() {
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert(`Preencha todos os campos para efetuar o login!`)
+            alert(`Preencha todos os campos para efetuar o login!`);
+            return false;
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -84,9 +84,9 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome;
+                    sessionStorage.ID_USUARIO = json[0].idUsuario;
 
                     setTimeout(function () {
                         window.location = "./quiz.html";
