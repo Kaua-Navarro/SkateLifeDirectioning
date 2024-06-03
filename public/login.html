@@ -40,8 +40,8 @@
     
           <div class="cardLogin">
             <h1>Login</h1>
-            <p>Nome</p>
-            <input type="text" id="input_nome" class="inputs">
+            <p>Email</p>
+            <input type="text" id="input_email" class="inputs">
             <p>Senha</p>
             <input type="password" id="input_senha" class="inputs">
             <br>
@@ -55,7 +55,6 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
@@ -101,7 +100,6 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
                 });
             }
 
@@ -111,9 +109,4 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>

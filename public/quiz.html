@@ -156,17 +156,19 @@
         <h2>Resultado</h2>
         <p id="resultadoTexto"></p>
         <br><br>
-        <button onclick="reiniciarQuiz()" class="botao">Reiniciar Quiz</button>
+        <button onclick="sair()" class="botao">Sair</button>
     </div>
 
 </body>
 </html>
 <script>
-    var pontosPorPergunta = 10;
+        var pontosPorPergunta = 10;
         var respostasCorretas = ['a', 'b', 'a', 'a', 'b', 'b', 'c', 'b', 'b', 'a'];
         var listaResposta = [];
         var listaPontuacao = [];
         var perguntaAtual = 1;
+        var pontuacaoFinal = 0;
+
 
         function iniciar() {
             cardInicio.style.display = 'none';
@@ -229,7 +231,7 @@
 
         function verificarRespostas() {
             listaResposta[9] = resposta10.value;
-            var pontuacaoFinal = 0;
+            
             for (var i = 0; i < listaResposta.length; i++) {
                 if (listaResposta[i] == respostasCorretas[i]) {
                     pontuacaoFinal += pontosPorPergunta;
@@ -239,16 +241,28 @@
             }
             pergunta10.style.display = 'none';
             resultado.style.display = 'block';
-            resultadoTexto.innerText = `Sua pontuação final é: ${pontuacaoFinal}`;
+            resultadoTexto.innerHTML = `Sua pontuação final é: ${pontuacaoFinal}`;
         }
 
-        function reiniciarQuiz() {
-            listaResposta = [];
-            resultado.style.display = 'none';
-            cardInicio.style.display = 'block';
-            for (var i = 1; i <= 10; i++) {
-                window['pergunta' + i].style.display = 'none';
-                window['resposta' + i].value = '';
-            }
+        function sair() {
+            var pontuacaoVar = pontuacaoFinal;
+            var idUserVar = sessionStorage.ID_USUARIO;
+
+            fetch("/quiz/cadastrarResultado", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    pontosServer: pontuacaoVar,
+                    idUserServer: idUserVar
+                }),
+            })
+
+            setTimeout(() => {
+                window.location = "dashboard/dashboard.html";
+            }, "1000");
+
+            return false;
         }
 </script>

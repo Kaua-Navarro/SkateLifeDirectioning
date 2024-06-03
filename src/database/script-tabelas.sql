@@ -20,7 +20,7 @@ CREATE TABLE Usuario (
 CREATE TABLE Quiz (
     idQuiz INT PRIMARY KEY AUTO_INCREMENT,
     fkUsuario INT,
-    Pontuação INT,
+    Pontuacao INT,
     dtQuiz DATE,
     FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario)
 );
